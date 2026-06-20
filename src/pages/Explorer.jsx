@@ -16,7 +16,7 @@ const Explorer = () => {
         const fetchDestinations = async () => {
             setLoading(true);
             try {
-                let url = 'http://localhost:5000/api/destinations';
+                let url = 'http://https://smart-travel-ai-backend.onrender.com/api/destinations';
                 const params = new URLSearchParams();
 
                 if (q) params.append('q', q);
@@ -24,7 +24,7 @@ const Explorer = () => {
 
                 // If we have search term use search endpoint, otherwise list endpoint with filters
                 if (q) {
-                    url = `http://localhost:5000/api/destinations/search?q=${encodeURIComponent(q)}`;
+                    url = `http://https://smart-travel-ai-backend.onrender.com/api/destinations/search?q=${encodeURIComponent(q)}`;
                     // Search endpoint might not handle isHiddenGem filter yet, so we rely on backend or client filter
                 } else {
                     if (params.toString()) url += `?${params.toString()}`;

@@ -21,12 +21,12 @@ const Planner = () => {
 
         try {
             // Parallel requests for speed (Mock MVP approach)
-            const itineraryReq = axios.post('http://localhost:5000/api/itinerary/generate', formData);
+            const itineraryReq = axios.post('http://https://smart-travel-ai-backend.onrender.com/api/itinerary/generate', formData);
             // We trigger these but don't block display if itinerary is ready first
-            const packingReq = axios.post('http://localhost:5000/api/itinerary/packing', {
+            const packingReq = axios.post('http://https://smart-travel-ai-backend.onrender.com/api/itinerary/packing', {
                 city: formData.city, season: 'Spring', activities: formData.preferences
             });
-            const etiquetteReq = axios.post('http://localhost:5000/api/itinerary/culture', { city: formData.city });
+            const etiquetteReq = axios.post('http://https://smart-travel-ai-backend.onrender.com/api/itinerary/culture', { city: formData.city });
 
             const [itineraryRes, packingRes, etiquetteRes] = await Promise.all([itineraryReq, packingReq, etiquetteReq]);
 
@@ -47,7 +47,7 @@ const Planner = () => {
         if (!result) return;
         setSaving(true);
         try {
-            await axios.post('http://localhost:5000/api/trips/save', {
+            await axios.post('http://https://smart-travel-ai-backend.onrender.com/api/trips/save', {
                 city: formData.city,
                 summary: result.itinerary.summary,
                 itinerary: result.itinerary,

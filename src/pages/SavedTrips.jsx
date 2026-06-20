@@ -13,7 +13,7 @@ const SavedTrips = () => {
     useEffect(() => {
         const fetchTrips = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/trips');
+                const res = await axios.get('http://https://smart-travel-ai-backend.onrender.com/api/trips');
                 setTrips(res.data);
             } catch (err) {
                 console.error(err);
@@ -26,7 +26,7 @@ const SavedTrips = () => {
         e.stopPropagation(); // Prevent opening modal when clicking delete
         if (window.confirm("Are you sure you want to delete this trip?")) {
             try {
-                await axios.delete(`http://localhost:5000/api/trips/${id}`);
+                await axios.delete(`http://https://smart-travel-ai-backend.onrender.com/api/trips/${id}`);
                 setTrips(trips.filter(t => t._id !== id));
             } catch (error) {
                 console.error("Failed to delete trip", error);

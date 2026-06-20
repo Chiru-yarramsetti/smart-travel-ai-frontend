@@ -39,7 +39,7 @@ const Chatbot = () => {
         setIsLoading(true);
 
         try {
-            const response = await axios.post('http://localhost:5000/api/chat', {
+            const response = await axios.post('http://https://smart-travel-ai-backend.onrender.com/api/chat', {
                 message: userMessageText
             });
 
@@ -89,8 +89,8 @@ const Chatbot = () => {
                                 className={`mb-3 flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                             >
                                 <div className={`max-w-[80%] p-3 rounded-lg ${msg.sender === 'user'
-                                        ? 'bg-blue-600 text-white rounded-br-none'
-                                        : 'bg-white border border-gray-200 text-gray-800 rounded-bl-none shadow-sm'
+                                    ? 'bg-blue-600 text-white rounded-br-none'
+                                    : 'bg-white border border-gray-200 text-gray-800 rounded-bl-none shadow-sm'
                                     }`}>
                                     <p className="text-sm whitespace-pre-wrap">{msg.text}</p>
                                 </div>
