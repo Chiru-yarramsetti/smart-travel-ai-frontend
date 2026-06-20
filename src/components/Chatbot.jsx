@@ -39,7 +39,7 @@ const Chatbot = () => {
         setIsLoading(true);
 
         try {
-            const response = await axios.post('http://https://smart-travel-ai-backend.onrender.com/api/chat', {
+            const response = await axios.post('https://smart-travel-ai-backend.onrender.com/api/.../chat', {
                 message: userMessageText
             });
 

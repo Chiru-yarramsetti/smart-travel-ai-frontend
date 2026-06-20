@@ -52,7 +52,7 @@ const VibeSearchModal = ({ isOpen, onClose }) => {
             // Or better, we navigate to explorer with a special ID or query
 
             // Temporary: Mock behavior until backend is ready or use a specific endpoint
-            const res = await axios.post('http://https://smart-travel-ai-backend.onrender.com/api/destinations/vibe-search', formData, {
+            const res = await axios.post('https://smart-travel-ai-backend.onrender.com/api/.../destinations/vibe-search', formData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
 
